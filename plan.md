@@ -301,3 +301,121 @@ These models **convert text into vectors (embeddings)** — numerical representa
 - **Few-shot Prompting**
 
 ## 📅 **Day 7: Dates, Functions & Prompt Engineering & first AI call via API**
+
+## 📅 **Day 8: Repeating, using LLM to answer only in certain fields. Using LLM for analysis**
+
+## 📅 **Day 9: Intro to Embedding LLM's, Vector databases.**
+
+- Python environments
+- Identation of python repeated
+- Introduction to vector data
+- Semantic search via Embedding LLM's
+- Introduction to numpy
+
+## 📅 **Day 10: Intro to, Vector databases. Persisting embeddings along with text**
+
+# 🧠 Vector Database Project History
+
+This file documents the evolution of our vector database learning examples using ChromaDB, OpenAI embeddings, and semantic search.
+
+---
+
+## 📅 **Day 10: Intro to Vector Databases. Persisting Embeddings Along with Text**
+
+**Why Vector Databases?**
+
+- Enable fast, accurate **semantic search**
+- Support retrieval by:
+  - Embeddings
+  - Raw text
+  - Metadata filters
+- Allow **fuzzy matching**: retrieve relevant results even if query wording differs
+- Support **long-term storage of embeddings**, saving on LLM API costs
+- Fast, scalable, and compact storage for high-dimensional vectors
+
+**What We Did:**
+
+- Introduced ChromaDB (in-memory and file-persistent modes)
+- Used `.upsert()` to add data without duplication
+- Inserted user-entered documents into a persistent vector DB
+- Queried those documents semantically using `query_texts` and `query_embeddings`
+- Discussed that **each collection should use one consistent embedding model**
+- Observed the importance of **embedding dimension consistency**
+
+---
+
+## ✅ Phase 1: In-Memory ChromaDB Demo
+
+**File:** `/chroma_demo.py`
+
+- Created an in-RAM vector database using `chromadb.Client()`
+- Inserted two simple documents manually (`pineapple`, `oranges`)
+- Used `query_texts` to semantically search for a relevant document
+- Introduced `get_or_create_collection` to avoid duplicate collections
+- Switched from `add()` to `upsert()` to prevent duplicate document insertions
+
+**Concepts learned:**
+
+- How to use vector DB for semantic similarity
+- Memory vs persistent storage
+- Embedding done by Chroma internally (default model)
+
+---
+
+## ✅ Phase 2: Persistent Vector Storage + Manual Input
+
+**Files:**
+
+- `/chroma_insert.py`
+- `/chroma_search.py`
+
+**Changes:**
+
+- Used `chromadb.PersistentClient(path="./vector-db")` to store data across runs
+- Took user input and added it to a "driving_rules" collection
+- Enabled search via user query
+- Collection persists between runs, allowing accumulation of rules
+
+**Concepts learned:**
+
+- Vector storage across sessions
+- Basic document I/O via CLI
+- Collection count and dynamic ID generation
+
+---
+
+## ✅ Phase 3: Embedding with OpenAI
+
+**Folder:** `/with_llm/`
+
+**Files:**
+
+- `embed.py`:
+  - Added support for embedding via OpenAI’s `text-embedding-3-small` model (on Azure)
+  - Created `get_embedding()` and `get_embeddings()` for single/batch use
+- `insertion.py`:
+  - Embedded user input manually
+  - Added to collection with metadata (e.g., `source: "KET Lietuva 2025"`)
+- `search.py`:
+  - Embedded user query with OpenAI
+  - Queried the DB using `query_embeddings` instead of `query_texts`
+  - Displayed matched document + distance + metadata
+
+**Concepts learned:**
+
+- External embedding vs internal embedding
+- Why embedding dimensions must match
+- Adding metadata to vector records
+- Improved search quality using OpenAI LLM-powered embeddings
+
+---
+
+## 🧠 Next Steps (Ideas)
+
+- Chunking larger documents and inserting them
+- Ranking results based on metadata filters
+- Adding response generation using OpenAI completions
+- Exporting and importing vector data (e.g., `.json`, `.txt`, `.csv`)
+- Building a simple Streamlit or Flask UI
+
+---
