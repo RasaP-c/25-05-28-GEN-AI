@@ -430,6 +430,7 @@ This file documents the evolution of our vector database learning examples using
 - More expensive in terms of resources
 - Agent systems don't follow project requirements. They need to be described separately.
 
+<<<<<<< HEAD
 These points outline various limitations and concerns about using AI agent systems, including issues with reliability, cost, security, and project management considerations.
 
 # Lecture 16. Agent with email sending capabilities
@@ -443,3 +444,7 @@ These points outline various limitations and concerns about using AI agent syste
 - we will choose the model for this.
 - check out how to send emails via python.
 - integrating chatbot with email sending capabilities.
+=======
+
+ These points outline various limitations and concerns about using AI agent systems, including issues with reliability, cost, security, and project management considerations.
+>>>>>>> 17a2be71dcb87e3e28b86039cb180451bc0b074b
