@@ -12,9 +12,13 @@ API_KEY = os.getenv("GH_API_TOKEN")
 PLATFORM_ENDPOINT = "https://models.github.ai/inference"
 MODEL = "openai/gpt-4.1-mini"
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> 17a2be71dcb87e3e28b86039cb180451bc0b074b
+=======
+
+>>>>>>> f90052cd2d2a7451cf162476ace9f5da57562a70
 # Other Params
 EXIT_KEYWORDS = ["exit", "end", "finish", "bye", "stop", "byebye"]
 
