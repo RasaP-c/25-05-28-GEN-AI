@@ -1,10 +1,10 @@
-<!-- # **Week 1: Python Foundations & Environment Setup**
+# **Week 1: Python Foundations & Environment Setup**
 
 ---
 
 ## 📅 **Day 1**
 
-### 🔹 Topics Covered
+### 🔹 Topics Covered:
 
 - Introduction — About the instructor
 - Overview of the course
@@ -30,16 +30,16 @@
 
 ## 📅 **Day 2**
 
-<!-- ### 🔹 Topics Covered -->
+### 🔹 Topics Covered:
 
-<!-- - Recap of Day 1 -->
-<!-- - Introduction to: -->
-  <!-- - **Git** (technology for version control)
-  - **GitHub** (platform for hosting code) -->
+- Recap of Day 1
+- Introduction to:
+  - **Git** (technology for version control)
+  - **GitHub** (platform for hosting code)
 
 ---
 
-<!-- ### 🛠️ Git Commands
+### 🛠️ Git Commands
 
 - `git clone <URL>`  
   Clones a remote repository to your local machine. Use only once for initial setup.
@@ -73,7 +73,7 @@
 - Discussing about GEN AI models
 - Gen AI models limitations
 
-<!-- #### 🔮 1. **Hallucination (Making Things Up)** -->
+#### 🔮 1. **Hallucination (Making Things Up)**
 
 - Gen AI models may **generate content that sounds plausible but is completely false**.
 - This includes:
@@ -117,7 +117,7 @@
 
 ### 6. It may fail on very simple and specific tasks, for example, counting 'r's in word "strawberry"
 
-### 7. It may fail in image generation while trying to add some text. Characters may seem distorted
+### 7. It may fail in image generation while trying to add some text. Characters may seem distorted.
 
 ### 8. Hosting LLM may seem very expensive in resources
 
@@ -127,22 +127,22 @@
 
 ### 🧠 1. **Vision LLMs**
 
-#### 🔍 What They Do
+#### 🔍 What They Do:
 
 - Process and understand **images or visual input**.
 - Combine **language + vision** to answer questions about pictures, describe images, or interact **multimodally**.
 
-#### 📌 Typical Tasks
+#### 📌 Typical Tasks:
 
 - **Image captioning**: “Describe this image.”
 - **Visual question answering**: “What’s the man holding in the picture?”
 - **Multimodal interaction**: “Read the text in this screenshot and explain it.”
 
-#### 🧪 Examples in Ollama
+#### 🧪 Examples in Ollama:
 
 - `llava`, `bakllava`, `gpt-4o` (if supported), `blip`, `clip`
 
-#### ⚙️ How They Differ
+#### ⚙️ How They Differ:
 
 - Expect an **image as input**, alongside or instead of text.
 - Cannot be used meaningfully for **language-only tasks** like embeddings.
@@ -151,7 +151,7 @@
 
 ### 🛠️ 2. **Tools LLMs**
 
-#### 🔍 What They Do
+#### 🔍 What They Do:
 
 LLMs configured to work with **external tools**, like:
 
@@ -160,20 +160,20 @@ LLMs configured to work with **external tools**, like:
 - Code execution
 - APIs
 
-#### 📌 Typical Tasks
+#### 📌 Typical Tasks:
 
 - “What’s 1249123 divided by 7.3?” → Calls a **calculator tool**
 - “Get the current weather in Berlin” → Calls a **weather API**
 - **Agent workflows** (multi-step reasoning)
 
-#### 🧪 Examples in Ollama
+#### 🧪 Examples in Ollama:
 
 - Tool-using variants of LLMs integrated with:
   - **LangChain**
   - **AutoGPT-like flows**
   - **Function-calling models**
 
-#### ⚙️ How They Differ
+#### ⚙️ How They Differ:
 
 - They don’t “know” the answers — they **perform actions or call helpers**.
 - May rely on **additional code or environment**.
@@ -184,22 +184,22 @@ LLMs configured to work with **external tools**, like:
 
 ### 🧠 3. **Language LLMs (Text-only Models)**
 
-#### 🔍 What They Do
+#### 🔍 What They Do:
 
 These are the most common LLMs — trained to **understand and generate human-like language**.
 
-#### 📌 Typical Tasks
+#### 📌 Typical Tasks:
 
 - Chatbots and virtual assistants
 - Code generation and debugging
 - Summarization, translation, rewriting
 - Creative writing or brainstorming
 
-#### 🧪 Examples in Ollama
+#### 🧪 Examples in Ollama:
 
 - `llama3`, `mistral`, `gemma`, `phi`, `tinyllama`
 
-#### ⚙️ How They Differ
+#### ⚙️ How They Differ:
 
 - Work only with **text input and output**.
 - Great for general-purpose use, but **not multimodal** (can’t process images).
@@ -209,22 +209,22 @@ These are the most common LLMs — trained to **understand and generate human-li
 
 ### 🧩 4. **Embedding Models**
 
-#### 🔍 What They Do
+#### 🔍 What They Do:
 
 These models **convert text into vectors (embeddings)** — numerical representations that capture semantic meaning.
 
-#### 📌 Typical Tasks
+#### 📌 Typical Tasks:
 
 - Semantic search (e.g., “find documents similar to this query”)
 - Clustering similar texts
 - Vector databases (e.g., Pinecone, FAISS)
 - Text classification and similarity scoring
 
-#### 🧪 Examples in Ollama
+#### 🧪 Examples in Ollama:
 
 - Embedding variants of `mistral`, `bge`, or smaller transformer-based models
 
-#### ⚙️ How They Differ
+#### ⚙️ How They Differ:
 
 - They don’t generate language like a chatbot.
 - Their job is **representational** — not conversational.
@@ -416,6 +416,30 @@ This file documents the evolution of our vector database learning examples using
 - Ranking results based on metadata filters
 - Adding response generation using OpenAI completions
 - Exporting and importing vector data (e.g., `.json`, `.txt`, `.csv`)
-- Building a simple Streamlit or Flask UI -->
+- Building a simple Streamlit or Flask UI
 
---- -->
+---
+
+# Lecture 14. Agentic systems
+
+- Can hallucinate (make up information)
+- Can make inappropriate decisions based on incorrect context
+- When using agent systems, people don't improve or don't see the need to improve
+- There can be security vulnerabilities due to the LLMs themselves (API keys, secret tokens, etc.)
+- More expensive than chatting with LLM
+- More expensive in terms of resources
+- Agent systems don't follow project requirements. They need to be described separately.
+
+These points outline various limitations and concerns about using AI agent systems, including issues with reliability, cost, security, and project management considerations.
+
+# Lecture 16. Agent with email sending capabilities
+
+- we will design the system.
+  - web search on a person data.
+  - people's b-day dates in a file
+  - b-day greetings
+  - (task scheduler, startup apps, python libraries that work in the background for checking).
+  - Confirmations before sending
+- we will choose the model for this.
+- check out how to send emails via python.
+- integrating chatbot with email sending capabilities.
