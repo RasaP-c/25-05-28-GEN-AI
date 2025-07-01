@@ -1,6 +1,6 @@
 {
   "is_invoice": true,
-  "invoice_number": "INV-100",  //|null
+  "invoice_number": "INV-100",  
   "invoice_date": "11/15/2019",
   "payment_due_date": "12/15/2019",
   "vendor_name": "Contoso Headquarters",
@@ -11,7 +11,7 @@
       "name": "Consulting Services",
       "code": "A123",
       "quantity": 4,
-      "measurement_unit": "hours", // (default "pcs")
+      "measurement_unit": "hours", 
       "discount": 0.99,
       "price": 30.45,
       "vat": 6.04
